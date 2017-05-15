@@ -1,5 +1,19 @@
+$backgroundColor: rgb(156, 226, 255);
+$secondaryFontColor: rgb(0, 180, 255);
+$primaryFontColor: rgb(0, 58, 83);
+$accentColor: rgb(255, 81, 0);
+
 $base-text-size: 16px;
 $base-font-family: sans-serif;
+
+h1,
+p {
+  color: $primaryFontColor;
+}
+
+h2 {
+  color: $accentColor;
+}
 
 // Remove the browsers built-in styling for lists elements.
 @mixin reset-list {
