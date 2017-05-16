@@ -18,8 +18,13 @@ html {
 }
 
 body {
-  background-color: $backgroundColor;
   background-image: url('../images/circles-and-roundabouts.png');
+  // background-color: $backgroundColor;
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
+}
+
+h1.title {
+  color: transparent;
+  margin: 0;
 }
