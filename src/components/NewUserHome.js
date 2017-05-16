@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import store from '../store'
 import logo from '../images/logo.png'
@@ -15,11 +15,11 @@ class NewUserHome extends Component {
         <div className='buttonBarn'>
           <button className='short1'>sign in</button>
           <button className='short2'>sign up</button>
-          <button className='long'>choose item to scan</button>
+          <button className='long'><Link to='/choose'>Choose Ingredient</Link></button>
         </div>
       </div>
     } else {
-      return <Redirect to='/welcome' />
+      return <Redirect to='/my_list' />
     }
   }
 }

@@ -9,10 +9,13 @@ $base-font-family: sans-serif;
 h1,
 p {
   color: $primaryFontColor;
+  max-width: 300px;
 }
 
-h2 {
+h2,
+h3 {
   color: $accentColor;
+  max-width: 300px;
 }
 
 p {
