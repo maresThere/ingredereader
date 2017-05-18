@@ -1,3 +1,7 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
 .Ingredients {
   display: flex;
   flex-direction: row;
@@ -12,50 +16,50 @@
   padding: 2px;
 }
 
-.notChosen.crustacean {
+.crustacean {
   background: url('../icons/crustacean.svg') no-repeat center;
 }
 
-.Chosen.crustacean {
+.chosen.crustacean {
   background: url('../icons/crustaceanColor.svg') no-repeat center;
 }
 
-.notChosen.egg {
+.egg {
   background: url('../icons/egg.svg') no-repeat center;
 }
 
-.Chosen.egg {
+.chosen.egg {
   background: url('../icons/eggColor.svg') no-repeat center;
 }
 
-.notChosen.gluten {
+.gluten {
   background: url('../icons/gluten.svg') no-repeat center;
 }
 
-.Chosen.gluten {
+.chosen.gluten {
   background: url('../icons/glutenColor.svg') no-repeat center;
 }
 
-.notChosen.mustard {
+.mustard {
   background: url('../icons/mustard.svg') no-repeat center;
 }
 
-.Chosen.mustard {
+.chosen.mustard {
   background: url('../icons/mustardColor.svg') no-repeat center;
 }
 
-.notChosen.nuts {
+.nuts {
   background: url('../icons/nuts.svg') no-repeat center;
 }
 
-.Chosen.nuts {
+.chosen.nuts {
   background: url('../icons/nutsColor.svg') no-repeat center;
 }
 
-.notChosen.sesame {
+.sesame {
   background: url('../icons/sesame.svg') no-repeat center;
 }
 
-.Chosen.sesame {
+.chosen.sesame {
   background: url('../icons/sesameColor.svg') no-repeat center;
 }
