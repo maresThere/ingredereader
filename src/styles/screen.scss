@@ -7,6 +7,8 @@ $base-font-family: sans-serif;
 
 html {
   @include full-height;
+
+  font-family: 'Exo 2', sans-serif;
 }
 
 .Choose,
@@ -20,12 +22,29 @@ html {
 }
 
 body {
-  background-image: url('../images/circles-and-roundabouts.png');
+  // background-image: url('../images/circles-and-roundabouts.png');
+  background-color: $backgroundColor;
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 h1.title {
   color: transparent;
   margin: 0;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  background-color: white;
+  color: $accentColor;
 }

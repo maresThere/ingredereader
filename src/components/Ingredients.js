@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient'
+import MyItems from './MyItems'
 
-const ingredients = ['crustacean', 'egg', 'gluten', 'mustard', 'nuts', 'sesame']
+const ingredients = ['crustacean', 'egg', 'fish', 'gluten', 'milk', 'mustard', 'nuts', 'peanuts', 'sesame', 'shellfish', 'soy']
 
 class Ingredients extends Component {
   state = {
-    myIngredients: ['sesame', 'mustard']
+    myIngredients: ['egg']
   }
 
   toggleChosen = (ingredient) => {
@@ -17,12 +18,19 @@ class Ingredients extends Component {
       ingredients.splice(index, 1)
     } else {
       // It wasn't, so add it
-      ingredients.push(ingredient)
+      if (this.state.myIngredients.length < 3) {
+        ingredients.push(ingredient)
+      }
     }
     this.setState({
       myIngredients: ingredients
     })
   }
+  // _click = () => {
+  //   this.setState({
+  //     myIngredients: []
+  //   })
+  // }
 
   render () {
     const ingredientChoices = ingredients.map((ingredient, i) => {
@@ -33,9 +41,16 @@ class Ingredients extends Component {
         index={i}
         key={i} />
     })
-    return <ul className='Ingredients'>
-      {ingredientChoices}
-    </ul>
+    return <div className='ingcontainer'>
+      <div className='allIngContainer'>
+        <ul className='Ingredients'>
+          {ingredientChoices}
+        </ul>
+      </div>
+      <p >MY SEARCH ITEMS:</p>
+      <MyItems items={this.state.myIngredients} />
+      {/* <button onClick{this._click}>reset</button> */}
+    </div>
   }
 }
 

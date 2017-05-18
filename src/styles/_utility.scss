@@ -1,21 +1,24 @@
-$backgroundColor: rgb(156, 226, 255);
+$backgroundColor: rgb(39, 96, 49);
 $secondaryFontColor: rgb(0, 180, 255);
 $primaryFontColor: rgb(0, 58, 83);
-$accentColor: rgb(255, 89, 73);
+$accentColor: rgb(246, 146, 30);
 
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,700');
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+
 
 h1,
 p {
-  color: $primaryFontColor;
+  color: white;
   max-width: 300px;
+  font-weight: 300;
 }
 
 h2,
 h3 {
-  color: $accentColor;
+  color: white;
   max-width: 300px;
+  font-weight: 300;
 }
 
 p {
@@ -34,9 +37,10 @@ p {
 // Apply a height to the html and body elements to that they
 // fill the height of the view by default.
 @mixin full-height {
-  height: 100vh;
+  height: 100%;
 
   body,
+  #root,
   #root > div {
     min-height: 100vh;
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import NewUserHome from './NewUserHome'
 import ReturningUserHome from './ReturningUserHome'
 import Choose from './Choose'
@@ -11,14 +11,22 @@ class App extends Component {
   render () {
     return <Router>
       <div className='App'>
-        <Switch>
-          <Route exact path='/' component={NewUserHome} />
-          <Route path='/welcome' component={ReturningUserHome} />
-          <Route path='/choose' component={Choose} />
-          <Route path='/my_list' component={MyItems} />
-          <Route path='/found' component={FoundIng} />
-          <Route path='/not_found' component={NotFound} />
-        </Switch>
+        <main>
+          <Switch>
+            <Route exact path='/' component={NewUserHome} />
+            <Route path='/welcome' component={ReturningUserHome} />
+            <Route path='/choose' component={Choose} />
+            <Route path='/my_list' component={MyItems} />
+            <Route path='/found' component={FoundIng} />
+            <Route path='/not_found' component={NotFound} />
+          </Switch>
+        </main>
+        <footer>
+          <Link to='/choose'><i className='fa fa-home fa-2x' aria-hidden='true' /></Link>
+          <i className='fa fa-barcode fa-2x' aria-hidden='true' />
+          <i className='fa fa-folder fa-2x' aria-hidden='true' />
+        </footer>
+
       </div>
     </Router>
   }
