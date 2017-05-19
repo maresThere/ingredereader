@@ -33,6 +33,12 @@ body {
   flex-direction: column;
 }
 
+.Logo {
+  max-width: 100px;
+  margin-top: 10px;
+  align-self: flex-start;
+
+}
 main {
   flex: 1;
 }

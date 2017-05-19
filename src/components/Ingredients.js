@@ -47,7 +47,7 @@ class Ingredients extends Component {
           {ingredientChoices}
         </ul>
       </div>
-      <p >MY SEARCH ITEMS:</p>
+      <p >MY SEARCH INGREDIENTS:</p>
       <MyItems items={this.state.myIngredients} />
       {/* <button onClick{this._click}>reset</button> */}
     </div>
