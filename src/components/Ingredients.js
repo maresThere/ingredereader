@@ -6,7 +6,7 @@ const ingredients = ['crustacean', 'egg', 'fish', 'gluten', 'milk', 'mustard', '
 
 class Ingredients extends Component {
   state = {
-    myIngredients: ['egg']
+    myIngredients: []
   }
 
   toggleChosen = (ingredient) => {
