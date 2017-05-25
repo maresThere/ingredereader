@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 import MyItems from './MyItems'
+import allergens from '../allergens'
 
-const ingredients = ['crustacean', 'egg', 'fish', 'gluten', 'milk', 'mustard', 'nuts', 'peanuts', 'sesame', 'shellfish', 'soy']
+const ingredients = Object.keys(allergens)
 
 class Ingredients extends Component {
   state = {

@@ -47,6 +47,7 @@ h1.title {
   color: transparent;
   margin: 0;
 }
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -61,8 +62,8 @@ footer {
 
 #interactive.viewport > canvas,
 #interactive.viewport > video {
-  max-width: 100%;
-  width: 100%;
+  max-width: 75%;
+  width: 75%;
 }
 
 canvas.drawing,
@@ -70,4 +71,5 @@ canvas.drawingBuffer {
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
 }

@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import Quagga from 'quagga'
+import Search from './Search'
+import beep from '../beep'
 
 class Scanner extends Component {
+  state = {
+    results: [],
+    bestResult: null
+  }
+
   componentDidMount () {
     Quagga.init({
       inputStream: {
@@ -18,7 +25,7 @@ class Scanner extends Component {
       },
       numOfWorkers: 4,
       decoder: {
-        readers: [ 'ean_reader' ]
+        readers: [ 'upc_reader' ]
       },
       locate: true
     }, function (err) {
@@ -57,16 +64,41 @@ class Scanner extends Component {
     Quagga.offDetected(this._onDetected)
   }
 
+  // _onClick = (e) => {
+  //   Quagga.stop()
+  // }
+
   _onDetected = (result) => {
-    console.log('detected:', result.codeResult.code)
-    // DO API query and handle results from that...
+    this.setState({
+      results: [...this.state.results, result.codeResult.code]
+    }, () => {
+      this.updateBestResult()
+    })
+  }
+
+  updateBestResult () {
+    const results = this.state.results.slice()
+    if (results.length > 10) {
+      const bestResult = results.sort((a, b) =>
+        results.filter(v => v === a).length -
+        results.filter(v => v === b).length
+      ).pop()
+      this.setState({ bestResult })
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.bestResult !== this.state.bestResult) {
+      beep()
+    }
   }
 
   render () {
     return <div className='Scanner'>
       <div id='interactive' className='viewport' />
-
       <h2>Results, etc..</h2>
+      <Search query={this.state.bestResult} />
+      <button className='stop'>Stop</button>
     </div>
   }
 }
