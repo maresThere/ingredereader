@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { get } from '../api'
 import Ingredients from './Ingredients'
+import allergens from '../allergens'
+import store from '../store'
 
 class Search extends Component {
   state = {
@@ -72,13 +74,42 @@ class Search extends Component {
       return <div className='Search'>
         <h3>{this.state.bestResult}</h3>
         <h2>{result.item_name}</h2>
-        <p>{result.nf_ingredient_statement}</p>
+        <IngredientList items={result.nf_ingredient_statement.split(' ')} />
       </div>
     } else {
       return <div className='Search'>
         <h2>Waiting for scan</h2>
       </div>
     }
+  }
+}
+
+class IngredientList extends Component {
+  render () {
+    let found = false
+    let bads = []
+    store.ingredients.forEach((item) => {
+      bads = [...bads, ...allergens[item]]
+    })
+    console.log(bads)
+    return <div style={{ display: 'flex' }}>
+      <p>{this.props.items.map((item, i) => {
+        const matched = bads.some((allergen) => item.toLowerCase().includes(allergen.toLowerCase()))
+        if (matched) {
+          found = true
+          return <span key={i} style={{ color: 'red' }}> {item} </span>
+        } else {
+          return <span key={i}> {item} </span>
+        }
+      })}</p>
+      <div>
+        {
+          found
+          ? <h2>DONT EAT</h2>
+          : <h2>YUM</h2>
+        }
+      </div>
+    </div>
   }
 }
 

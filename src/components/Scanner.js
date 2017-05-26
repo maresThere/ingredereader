@@ -20,7 +20,7 @@ class Scanner extends Component {
         }
       },
       locator: {
-        patchSize: 'medium',
+        patchSize: 'large',
         halfSample: true
       },
       numOfWorkers: 4,

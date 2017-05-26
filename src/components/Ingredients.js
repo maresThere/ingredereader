@@ -2,30 +2,24 @@ import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 import MyItems from './MyItems'
 import allergens from '../allergens'
+import { observer } from 'mobx-react'
+import store from '../store'
 
 const ingredients = Object.keys(allergens)
-
+@observer
 class Ingredients extends Component {
-  state = {
-    myIngredients: []
-  }
-
   toggleChosen = (ingredient) => {
-    const ingredients = this.state.myIngredients.slice()
-    const index = ingredients.indexOf(ingredient)
+    const index = store.ingredients.indexOf(ingredient)
 
     if (index >= 0) {
       // It was in the list, so remove it
-      ingredients.splice(index, 1)
+      store.ingredients.splice(index, 1)
     } else {
       // It wasn't, so add it
-      if (this.state.myIngredients.length < 3) {
-        ingredients.push(ingredient)
+      if (store.ingredients.length < 3) {
+        store.ingredients.push(ingredient)
       }
     }
-    this.setState({
-      myIngredients: ingredients
-    })
   }
   // _click = () => {
   //   this.setState({
@@ -37,7 +31,7 @@ class Ingredients extends Component {
     const ingredientChoices = ingredients.map((ingredient, i) => {
       return <Ingredient
         content={ingredient}
-        picked={this.state.myIngredients.includes(ingredient)}
+        picked={store.ingredients.includes(ingredient)}
         toggleChosen={this.toggleChosen}
         index={i}
         key={i} />
@@ -48,8 +42,8 @@ class Ingredients extends Component {
           {ingredientChoices}
         </ul>
       </div>
-      <p >MY SEARCH INGREDIENTS:</p>
-      <MyItems items={this.state.myIngredients} />
+      <p>MY SEARCH INGREDIENTS:</p>
+      <MyItems items={store.ingredients} />
       {/* <button onClick{this._click}>reset</button> */}
     </div>
   }
