@@ -49,7 +49,7 @@ class Scanner extends Component {
         }
 
         if (result.box) {
-          Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: '#00F', lineWidth: 2})
+          Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: '#f92', lineWidth: 2})
         }
 
         if (result.codeResult && result.codeResult.code) {
@@ -96,7 +96,6 @@ class Scanner extends Component {
   render () {
     return <div className='Scanner'>
       <div id='interactive' className='viewport' />
-      <h2>Results, etc..</h2>
       <Search query={this.state.bestResult} />
       <button className='stop'>Stop</button>
     </div>

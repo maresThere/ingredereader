@@ -3,19 +3,20 @@
 @import 'ingredient';
 
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+$base-font-family: 'Josefin Sans', sans-serif;
 
 html {
   @include full-height;
 
-  font-family: 'Exo 2', sans-serif;
+  font-family: $base-font-family;
 }
 
 .Choose,
 .MyItems,
 .NewUserHome,
 .ReturningUserHome,
-.FoundIng {
+.FoundIng,
+.Search {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,8 +38,8 @@ body {
   max-width: 100px;
   margin-top: 10px;
   align-self: flex-start;
-
 }
+
 main {
   flex: 1;
 }
@@ -46,6 +47,19 @@ main {
 h1.title {
   color: transparent;
   margin: 0;
+}
+
+.Search {
+  height: 350px;
+  width: 350px;
+}
+
+.eatOrDont h2{
+  // height: 30px;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+  color: $primaryFontColor;
 }
 
 footer {

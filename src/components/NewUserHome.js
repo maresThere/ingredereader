@@ -13,8 +13,8 @@ class NewUserHome extends Component {
         <img src={logo} alt='' />
         <p>A simple way to read an ingredient label by scanning the bar code</p>
         <div className='buttonBarn'>
-          <button className='short1'>sign in</button>
-          <button className='short2'>sign up</button>
+          <button className='long'>sign in</button>
+          <button className='long'>sign up</button>
           <button className='long'><Link to='/choose'>Choose Ingredient</Link></button>
         </div>
       </div>

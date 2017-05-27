@@ -8,6 +8,7 @@ const MyItems = ({ items }) => {
         return <li className={`mine chosen ${item}`} key={i} />
       })}
     </ul>
+    <div className='content'> Includes these things thing</div>
   </div>
 }
 export default MyItems

@@ -92,21 +92,21 @@ class IngredientList extends Component {
       bads = [...bads, ...allergens[item]]
     })
     console.log(bads)
-    return <div style={{ display: 'flex' }}>
+    return <div style={{ display: 'flex', flexDirection: 'column' }}>
       <p>{this.props.items.map((item, i) => {
         const matched = bads.some((allergen) => item.toLowerCase().includes(allergen.toLowerCase()))
         if (matched) {
           found = true
-          return <span key={i} style={{ color: 'red' }}> {item} </span>
+          return <span key={i} style={{ backgroundColor: 'darkslategray' }}> {item} </span>
         } else {
           return <span key={i}> {item} </span>
         }
       })}</p>
-      <div>
+      <div className='eatOrDont'>
         {
           found
-          ? <h2>DONT EAT</h2>
-          : <h2>YUM</h2>
+          ? <h2>- FOUND INGREDIENTS -</h2>
+          : <h2>- NOTHING FOUND -</h2>
         }
       </div>
     </div>
