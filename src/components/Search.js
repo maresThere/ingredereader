@@ -6,7 +6,7 @@ import store from '../store'
 
 class Search extends Component {
   state = {
-    live: false,
+    live: true,
     results: null
   }
 

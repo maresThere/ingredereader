@@ -9,6 +9,7 @@ const MyItems = ({ items }) => {
       })}
     </ul>
     <div className='content'> Includes these things thing</div>
+    <h4 className='codePointer'>TAP BARCODE BELOW TO SCAN</h4>
   </div>
 }
 export default MyItems

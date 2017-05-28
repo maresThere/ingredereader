@@ -35,9 +35,14 @@ body {
 }
 
 .Logo {
-  max-width: 100px;
+  max-width: 75px;
   margin-top: 10px;
   align-self: flex-start;
+}
+
+.codePointer {
+  position: fixed;
+  bottom: 30px;
 }
 
 main {
@@ -54,7 +59,7 @@ h1.title {
   width: 350px;
 }
 
-.eatOrDont h2{
+.eatOrDont h2 {
   // height: 30px;
   margin: 0;
   font-weight: 600;
