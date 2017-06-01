@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Quagga from 'quagga'
 import Search from './Search'
+import InputSearch from './InputSearch'
 import beep from '../beep'
 
 class Scanner extends Component {
   state = {
     results: [],
+    scanning: true,
     bestResult: null
   }
 
@@ -82,10 +84,12 @@ class Scanner extends Component {
   }
 
   _click = (e) => {
+    this.setState({ scanning: false, bestResult: null, results: [] })
     Quagga.stop()
   }
 
   _clickOn = () => {
+    this.setState({ scanning: true, bestResult: null, results: [] })
     this.init()
   }
 
@@ -117,11 +121,14 @@ class Scanner extends Component {
 
   render () {
     return <div className='Scanner'>
-      <div id='interactive' className='viewport' />
-      <h2>{this.state.bestResult}</h2>
+      <div className='scanContainer'>
+        { this.state.scanning && <div id='interactive' className='viewport' /> }
+      </div>
       <Search query={this.state.bestResult} />
-      <button onClick={this._click}>Stop</button>
-      <button onClick={this._clickOn}>Scan</button>
+      <div className='stopstartbtn'>
+        <button onClick={this._click}>Stop</button>
+        <button onClick={this._clickOn}>Scan</button>
+      </div>
     </div>
   }
 }
