@@ -7,8 +7,6 @@ import MyItems from './MyItems'
 import FoundIng from './FoundIng'
 import NotFound from './NotFound'
 import Scanner from './Scanner'
-// import Search from './Search'
-// import SearchField from './SearchField'
 
 // import { NewUserHome, ReturningUserHome, Choose, MyItems, FoundIng, NotFound, Scanner } from '.'
 
@@ -27,10 +25,8 @@ class App extends Component {
             <Route path='/not_found' component={NotFound} />
           </Switch>
         </main>
-        {/* <Search />
-        <SearchField /> */}
         <footer>
-          <Link to='/choose'><i className='fa fa-home fa-2x' aria-hidden='true' /></Link>
+          <Link to='/'><i className='fa fa-home fa-2x' aria-hidden='true' /></Link>
           <Link to='/scanner'><i className='fa fa-barcode fa-2x' aria-hidden='true' /></Link>
           <i className='fa fa-folder fa-2x' aria-hidden='true' />
         </footer>

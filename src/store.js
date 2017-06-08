@@ -1,7 +1,6 @@
 import { observable, autorun } from 'mobx'
 
 class Store {
-   @observable newUser = null
    @observable ingredients = JSON.parse(window.localStorage.getItem('ingredients')) || []
 
   constructor () {

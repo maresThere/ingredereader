@@ -5,7 +5,7 @@ import logo from '../images/logo.png'
 
 const Choose = () => {
   return <div className='Choose'>
-    <Link to='/choose'><img src={logo} alt='Ingredereader Logo' className='Logo' /></Link>
+    <Link to='/'><img src={logo} alt='Ingredereader Logo' className='Logo' /></Link>
     <h3>CHOOSE UP TO 3 INGREDIENTS</h3>
     <Ingredients />
 
