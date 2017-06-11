@@ -3,6 +3,8 @@ import Quagga from 'quagga'
 import Search from './Search'
 import InputSearch from './InputSearch'
 import beep from '../beep'
+import Header from './Header'
+import auth from '../utils/auth'
 
 class Scanner extends Component {
   state = {
@@ -121,6 +123,7 @@ class Scanner extends Component {
 
   render () {
     return <div className='Scanner'>
+      <Header />
       <div className='scanContainer'>
         { this.state.scanning && <div id='interactive' className='viewport' /> }
       </div>

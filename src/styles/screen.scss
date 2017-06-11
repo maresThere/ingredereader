@@ -36,14 +36,33 @@ body {
 }
 
 .Logo {
-  max-width: 75px;
+  max-width: 50px;
   margin-top: 10px;
   align-self: flex-start;
 }
 
-.codePointer {
-  position: fixed;
-  bottom: 30px;
+.Header {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  // align-items: baseline;
+  padding: 5px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    margin: 0;
+    font-size: 0.8em;
+  }
+}
+
+.profilePic {
+  border-radius: 50%;
+  width: 40px;
+  align-self: center;
 }
 
 main {
@@ -93,13 +112,13 @@ footer {
 }
 
 .scanContainer {
-  height: 300px;
+  // height: 300px;
 }
 
 #interactive.viewport {
   position: relative;
   display: flex;
-  height: 300px;
+  // height: 300px;
   justify-content: center;
 }
 
@@ -107,6 +126,7 @@ footer {
 #interactive.viewport > video {
   max-width: 75%;
   width: 75%;
+  align-self: flex-start;
 }
 
 // #interactive.viewport > video {

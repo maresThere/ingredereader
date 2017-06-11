@@ -7,6 +7,7 @@ import MyItems from './MyItems'
 import FoundIng from './FoundIng'
 import NotFound from './NotFound'
 import Scanner from './Scanner'
+import auth from '../utils/auth'
 
 // import { NewUserHome, ReturningUserHome, Choose, MyItems, FoundIng, NotFound, Scanner } from '.'
 
@@ -29,6 +30,7 @@ class App extends Component {
           <Link to='/'><i className='fa fa-home fa-2x' aria-hidden='true' /></Link>
           <Link to='/scanner'><i className='fa fa-barcode fa-2x' aria-hidden='true' /></Link>
           <i className='fa fa-folder fa-2x' aria-hidden='true' />
+          <Link to='/'><div onClick={() => auth.signOut()}><i className='fa fa-sign-out fa-2x' aria-hidden='true' /></div></Link>
         </footer>
 
       </div>

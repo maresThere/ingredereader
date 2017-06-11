@@ -1,52 +1,46 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 import MyItems from './MyItems'
-import allergens from '../allergens'
+import allergenExamples from '../utils/allergenExamples'
 import { observer } from 'mobx-react'
 import store from '../store'
 
-const ingredients = Object.keys(allergens)
+const examples = Object.keys(allergenExamples)
 @observer
-class Ingredients extends Component {
+class AllergenExamples extends Component {
   toggleChosen = (ingredient) => {
-    const index = store.ingredients.indexOf(ingredient)
+    const index = store.examples.indexOf(ingredient)
 
     if (index >= 0) {
       // It was in the list, so remove it
-      store.ingredients.splice(index, 1)
+      store.examples.splice(index, 1)
     } else {
       // It wasn't, so add it
-      if (store.ingredients.length < 3) {
-        store.ingredients.push(ingredient)
+      if (store.examples.length < 3) {
+        store.examples.push(ingredient)
       }
     }
   }
-  // _click = () => {
-  //   this.setState({
-  //     myIngredients: []
-  //   })
-  // }
 
   render () {
-    const ingredientChoices = ingredients.map((ingredient, i) => {
+    const ingredientChoices = examples.map((ingredient, i) => {
       return <Ingredient
         content={ingredient}
-        picked={store.ingredients.includes(ingredient)}
+        picked={store.examples.includes(ingredient)}
         toggleChosen={this.toggleChosen}
         index={i}
         key={i} />
     })
     return <div className='ingcontainer'>
       <div className='allIngContainer'>
-        <ul className='Ingredients'>
+        <ul className='allergenExamples'>
           {ingredientChoices}
         </ul>
       </div>
       <p>MY SEARCH INGREDIENTS:</p>
-      <MyItems items={store.ingredients} />
-
+      <MyItems items={store.examples} />
     </div>
   }
 }
 
-export default Ingredients
+export default AllergenExamples
