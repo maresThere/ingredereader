@@ -1,14 +1,13 @@
 import React from 'react'
 
-const MyItems = ({ items }) => {
-  return <div className='MyItems'>
+const MyExamples = ({ expls }) => {
+  return <div className='MyExamples'>
 
-    <ul className='myList'>
-      {items.map((item, i) => {
-        return <li className={`mine chosen ${item}`} key={i} />
+    <ul className='myExpls'>
+      {expls.map((expl, i) => {
+        return <li className={`mine chosen ${expl}`} key={i} />
       })}
     </ul>
-    <div className='content'> Includes these things thing</div>
   </div>
 }
-export default MyItems
+export default MyExamples

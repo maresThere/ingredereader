@@ -46,3 +46,13 @@ p {
     min-height: 100vh;
   }
 }
+
+@keyframes blinker {
+  0%, 50% {
+      background-color: rgb(255,89,73);
+  }
+  50.1%, 99% {
+      background-color: white;
+
+  }
+}

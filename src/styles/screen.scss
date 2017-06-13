@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  // background-image: url('../images/circles-and-roundabouts.png');
   background-color: $backgroundColor;
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
@@ -38,24 +37,31 @@ body {
 .Logo {
   max-width: 50px;
   margin-top: 10px;
-  align-self: flex-start;
 }
 
 .Header {
-  width: 300px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  // align-items: baseline;
-  padding: 5px;
+  // justify-content: center;
+  padding: 2px;
+  margin-bottom: 3px;
+  background-color: white;
+  box-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.75);
 }
 
-.profile {
+.headerContainer {
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  width: 280px;
 
-  h4 {
+  h3 {
+    // width: 150px;
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1.5em;
+    align-self: center;
+    text-align: left;
+    color: $primaryFontColor;
   }
 }
 
@@ -63,6 +69,7 @@ body {
   border-radius: 50%;
   width: 40px;
   align-self: center;
+
 }
 
 main {
@@ -98,9 +105,12 @@ input.upcMan {
 .eatOrDont h2 {
   // height: 30px;
   margin: 0;
+  padding: 5px 0px 2px;
   font-weight: 600;
+  align-self: center;
   text-align: center;
   color: $primaryFontColor;
+  animation: blinker 2s infinite;
 }
 
 footer {
@@ -109,6 +119,7 @@ footer {
   padding: 8px;
   background-color: white;
   color: $accentColor;
+  box-shadow: 0px -2px 8px -1px rgba(0,0,0,0.75);
 }
 
 .scanContainer {

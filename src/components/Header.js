@@ -5,10 +5,10 @@ import logo from '../images/logo.png'
 
 const Header = () => {
   return <div className='Header'>
-    <Link to='/'><img src={logo} alt='Ingredereader Logo' className='Logo' /></Link>
-    <div className='profile'>
-      {/* <h4>{auth.profile.given_name}</h4>
-      <img src={auth.profile.picture} className='profilePic' /> */}
+    <div className='headerContainer'>
+      <img src={auth.profile.picture} className='profilePic' />
+      <h3>{auth.profile.given_name}</h3>
+      <Link to='/'><img src={logo} alt='Ingredereader Logo' className='Logo' /></Link>
     </div>
   </div>
 }
