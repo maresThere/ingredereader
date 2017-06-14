@@ -42,7 +42,6 @@ body {
 .Header {
   width: 100%;
   display: flex;
-  // justify-content: center;
   padding: 2px;
   margin-bottom: 3px;
   background-color: white;
@@ -146,7 +145,7 @@ footer {
 
 canvas.drawing,
 canvas.drawingBuffer {
-  display: none;
+  display: flex;
   position: absolute;
   left: 50px;
   top: 0;

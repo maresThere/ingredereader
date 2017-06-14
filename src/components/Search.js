@@ -7,7 +7,7 @@ class Search extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      live: false,
+      live: true,
       results: null,
       query: props.query || ''
     }

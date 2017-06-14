@@ -8,20 +8,6 @@ import store from '../store'
 const examples = Object.keys(allergenExamples)
 @observer
 class AllergenExamples extends Component {
-  toggleChosen = (example) => {
-    const index = store.examples.indexOf(example)
-
-    if (index >= 0) {
-      // It was in the list, so remove it
-      store.examples.splice(index, 1)
-    } else {
-      // It wasn't, so add it
-      if (store.examples.length < 3) {
-        store.examples.push(example)
-      }
-    }
-  }
-
   render () {
     const exampleChoices = examples.map((example, i) => {
       return <Ingredient
@@ -31,14 +17,10 @@ class AllergenExamples extends Component {
         index={i}
         key={i} />
     })
-    return <div className='ingcontainer'>
-      <div className='allIngContainer'>
-        <ul className='allergenExamples'>
-          {exampleChoices}
-        </ul>
-      </div>
-      <p>MY SEARCH INGREDIENTS:</p>
-      <MyItems items={store.examples} />
+    return <div className='explecontainer'>
+      <ul className='allergenExamples'>
+        {exampleChoices}
+      </ul>
     </div>
   }
 }
