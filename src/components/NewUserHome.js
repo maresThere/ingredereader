@@ -11,7 +11,7 @@ class NewUserHome extends Component {
       return <div className='NewUserHome'>
         <h1 className='title'>Ingredereader</h1>
         <img src={logo} alt='' />
-        <p className='intro'>A simple way to find an ingredient label by scanning the bar code</p>
+        <p className='intro'>A simple way to find an ingredient by scanning the label's bar code</p>
         <div className='buttonBarn'>
           <button className='long' onClick={() => auth.signIn()}>sign in</button>
           {/* <button className='long'>sign up</button> */}
